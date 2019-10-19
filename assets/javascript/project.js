@@ -30,15 +30,13 @@ $.ajax({
 
 //eventful API call
 $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&location="+
+    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&location="+
      locationZIP +"&within=" 
      + withinDistance,
-    method: "GET"
-})
-
-    .then(function (eResponse) {
-
-        var eResults = eResponse.data;
+    method: "GET",
+}).then(function(eResponse){
+    var eResults = JSON.parse(eResponse)
+    
+         console.log(eResults.events.event[1].title);
     });
 });
-
