@@ -11,22 +11,28 @@ var withinDistance = "";
 
 $("#submit").on("click", function(){
     event.preventDefault();
-});
+    locationZIP = $("#postalCode").val().trim();
+    withinDistance = $("#milesSelect").val();
+    console.log(locationZIP);
+    console.log(withinDistance);
 
-//weatherbit API call
+    //weatherbit API call
 $.ajax({
-    url: "https://api.weatherbit.io/v2.0/current?&key=a9e56460888847cb8e5be3983a349760&postal_code=" + location + "&country=US",
+    url: "https://api.weatherbit.io/v2.0/current?key=a9e56460888847cb8e5be3983a349760&postal_code=" + 
+    locationZIP + "&country=US",
     method: "GET"
 })
 
-.then(function (WbResults) {
+.then(function (WbResponse) {
     
-    var WbResults = WbResults.data;
+    var WbResults = WbResponse.data;
 });
 
 //eventful API call
 $.ajax({
-    url: "http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&location=" + location + "&within=" + withinDistance,
+    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&location="+
+     locationZIP +"&within=" 
+     + withinDistance,
     method: "GET"
 })
 
@@ -34,3 +40,5 @@ $.ajax({
 
         var eResults = eResponse.data;
     });
+});
+
