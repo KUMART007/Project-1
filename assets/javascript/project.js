@@ -19,13 +19,18 @@ $("#submit").on("click", function(){
     //weatherbit API call
 $.ajax({
     url: "https://api.weatherbit.io/v2.0/current?key=a9e56460888847cb8e5be3983a349760&postal_code=" + 
-    locationZIP + "&country=US",
+    locationZIP + "&country=US&units=I",
     method: "GET"
 })
 
 .then(function (WbResponse) {
-    
-    var WbResults = WbResponse.data;
+    var WbResults = WbResponse.data[0];
+
+    $("#actualTempResult").text("Actual Temperature :" + WbResults.temp + String.fromCharCode(176));
+    $("#tempResult").text("How it Feels: " + WbResults.app_temp + String.fromCharCode(176));
+    $("#cityResult").text("in " + WbResults.city_name);
+    console.log(WbResults);
+
 });
 
 //eventful API call
