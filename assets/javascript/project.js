@@ -38,10 +38,20 @@ $.ajax({
     url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&location="+
      locationZIP +"&within=" 
      + withinDistance,
-    method: "GET",
+    method: "GET"
 }).then(function(eResponse){
-    var eResults = JSON.parse(eResponse)
-    
-         console.log(eResults.events.event[1].title);
-    });
+
+    var eResults = JSON.parse(eResponse);
+
+    for (var i = 0; i < 10; i++) {
+        var newDiv = $("<div>");
+        newDiv.addClass("individual-event-container");   
+        $("#eventful-items").append(newDiv);
+        newDiv.append("<p class=event-name>Event: " + eResults.events.event[i].title + "</p>");
+        newDiv.append("<p>Location: " + eResults.events.event[i].venue_name + " at " + eResults.events.event[i].venue_address);
+        newDiv.append("<p>Start Time: " + eResults.events.event[i].start_time + "</p>");
+        newDiv.append("<p>Event Web Site: " + eResults.events.event[i].url + "</p>");
+             console.log(eResults);
+    }
+});
 });
