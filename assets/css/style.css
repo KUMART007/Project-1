@@ -1,0 +1,16 @@
+.individual-event-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    align-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: double 4px green;
+    padding: 2px;
+    margin: 10px;
+}
+
+.event-name {
+    font-weight: bold;
+}
