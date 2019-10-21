@@ -26,7 +26,7 @@ $.ajax({
 .then(function (WbResponse) {
     var WbResults = WbResponse.data[0];
 
-    $("#actualTempResult").text("Actual Temperature :" + WbResults.temp + String.fromCharCode(176));
+    $("#actualTempResult").text("Actual Temperature: " + WbResults.temp + String.fromCharCode(176));
     $("#tempResult").text("How it Feels: " + WbResults.app_temp + String.fromCharCode(176));
     $("#cityResult").text("in " + WbResults.city_name);
     console.log(WbResults);
