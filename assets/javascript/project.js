@@ -26,7 +26,7 @@ $.ajax({
 .then(function (WbResponse) {
     var WbResults = WbResponse.data[0];
 
-    $("#actualTempResult").text("Actual Temperature :" + WbResults.temp + String.fromCharCode(176));
+    $("#actualTempResult").text("Actual Temperature: " + WbResults.temp + String.fromCharCode(176));
     $("#tempResult").text("How it Feels: " + WbResults.app_temp + String.fromCharCode(176));
     $("#cityResult").text("in " + WbResults.city_name);
     console.log(WbResults);
@@ -45,13 +45,15 @@ $.ajax({
 
     for (var i = 0; i < 10; i++) {
         var newDiv = $("<div>");
+        var eventURL = eResults.events.event[i].url
         newDiv.addClass("individual-event-container");   
         $("#eventful-items").append(newDiv);
         newDiv.append("<p class=event-name>Event: " + eResults.events.event[i].title + "</p>");
         newDiv.append("<p>Location: " + eResults.events.event[i].venue_name + " at " + eResults.events.event[i].venue_address);
         newDiv.append("<p>Start Time: " + eResults.events.event[i].start_time + "</p>");
-        newDiv.append("<p>Event Web Site: " + eResults.events.event[i].url + "</p>");
+        newDiv.append("<p>For more info: " + "<a href='" + eventURL + "' target='blan'>Event Website</a>" + "</p>");
              console.log(eResults);
+             console.log(eventURL)
     }
 });
 });

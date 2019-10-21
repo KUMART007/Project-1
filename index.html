@@ -5,56 +5,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Step out!</title>
 
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>STEP OUT!</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Link to Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Link to our stylesheet -->
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+
 </head>
 
 <body>
-  <h1>Step out!</h1>
 
-  <form>
-    <div class="form-group">
-      <label for="postalCode">ZIP or Postal Code</label>
-      <input type="text" class="form-control" id="postalCode" placeholder="Type here">
+  <div class="container">
+
+    <div class="row">
+      <img id="step-out-logo-pic" src="./assets/images/STEPOUT.jpg" alt="Step Out App">
     </div>
-    <div class="form-row align-items-center">
-      <div class="col-auto my-1">
-        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Miles away</label>
-        <select class="custom-select mr-sm-2" id="milesSelect">
-          <option selected>Within</option>
-          <option value="5">5 miles</option>
-          <option value="15">15 miles</option>
-          <option value="25">25 miles</option>
-          <option value="50">50 miles</option>
-        </select>
-      </div>
-      <div>
-        <input class="btn btn-primary" type="submit" value="Submit" id="submit">
-      </div>
 
-      <div class = "row">
-        <div id="eventful-items">
+    <div class="row justify-content-center">
+      <div class="col-6 p-5">
+        <h3>"Step Out!" is your guide to events and activities happening in your own backyard on this very day. Well, maybe
+          not literally in your backyard because that would be weird. But close by.</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <h4>Just enter your ZIP code, how far you are willing to range, and "Step Out!" will show you a lot of different  options. And
+          also current weather conditions, so you know what gear to take with you. So get off the couch, and step out!</h4>
+      </div>
+    </div>
+
+    <hr>
+
+    <form>
+      <div class="row justify-content-center"">
+        <div class=" col-4">
+        <div class="form-group">
+          <label for="postalCode">ZIP or Postal Code</label>
+          <input type="text" class="form-control" id="postalCode" placeholder="Type here">
         </div>
-        
-      <div>
-        <h1 id="actualTempResult"></h1>
-        <h1 id="tempResult"></h1>
-        <h1 id="cityResult"></h1>
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Miles away</label>
+            <select class="custom-select mr-sm-2" id="milesSelect">
+              <option selected>Within</option>
+              <option value="5">5 miles</option>
+              <option value="15">15 miles</option>
+              <option value="25">25 miles</option>
+              <option value="50">50 miles</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <input class="btn btn-warning btn-lg" type="submit" value="Submit" id="submit">
+        </div>
       </div>
+  </div>
+  </form>
+  <br>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <h3>Undecided? Not sure what to pick? Let "Step Out!" surprise you. (It's kind of like the bossy best friend who
+        likes to plan your day for you, only with an Off switch.) </h3>
+    </div>
+  </div>
 
-      <script src="./assets/javascript/project.js"></script>
+  <div class="row justify-content-center" id="surprisePick">
+  </div>
+
+  <div class="row justify-content-center" id="eventful-items">
+  </div>
+
+  <hr>
+
+  <div class="row justify-content-center" id="weather-items">
+    <div class="col-9">
+    <h1 id="actualTempResult"></h1>
+    <h1 id="tempResult"></h1>
+    <h1 id="cityResult"></h1>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="footer">
+      <div class="col-12">
+        Background is courtesy of Matt Lipman at <a href="https://SVGBackgrounds.com" target="_blank">
+          SVGBackgrounds.com</a>.
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Linking jQuery CDN and AJAX-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Linking our JavaScript file -->
+  <script src="./assets/javascript/project.js"></script>
+
+
 </body>
 
 </html>
