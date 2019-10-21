@@ -23,24 +23,30 @@
 <body>
 
   <div class="container">
+
     <div class="row">
       <img id="step-out-logo-pic" src="./assets/images/STEPOUT.jpg" alt="Step Out App">
     </div>
 
     <div class="row justify-content-center">
       <div class="col-6 p-5">
-        <h3>"Step Out!" is your guide to events and activities happening in your own backyard this very day. Well, maybe
-          not literally in your backyard because that would be weird. But close by.</h4>
-      </div class="col-6 p-5">
-      <h4>Just enter your ZIP code, how far you are willing to range, and "Step Out!" will show you some options. And
-        also current weather conditions. So get off the couch, and step out!</h4>
+        <h3>"Step Out!" is your guide to events and activities happening in your own backyard on this very day. Well, maybe
+          not literally in your backyard because that would be weird. But close by.</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <h4>Just enter your ZIP code, how far you are willing to range, and "Step Out!" will show you a lot of different  options. And
+          also current weather conditions, so you know what gear to take with you. So get off the couch, and step out!</h4>
+      </div>
     </div>
 
     <hr>
 
     <form>
       <div class="row justify-content-center"">
-        <div class="col-6">
+        <div class=" col-4">
         <div class="form-group">
           <label for="postalCode">ZIP or Postal Code</label>
           <input type="text" class="form-control" id="postalCode" placeholder="Type here">
@@ -60,31 +66,42 @@
         <div>
           <input class="btn btn-warning btn-lg" type="submit" value="Submit" id="submit">
         </div>
-        <br>
-        <h3>Undecided? Not sure what to pick? Let "Step Out!" surprise you. (It's kind of like the bossy best friend who
-          likes to plan your day for you, only with an Off switch.) </h3>
-
-        <div id="surprisePick">  
-        </div>
-
-        <div class="row">
-          <div id="eventful-items">
-          </div>
-
-          <div>
-            <h1 id="actualTempResult"></h1>
-            <h1 id="tempResult"></h1>
-            <h1 id="cityResult"></h1>
-          </div>
-
-          <div class="row">
-            <div class="footer">
-              Background is courtesy of Matt Lipman at <a href="https://SVGBackgrounds.com" target="_blank">
-                SVGBackgrounds.com</a>.
-            </div>
-          </div>
-        </div>
       </div>
+  </div>
+  </form>
+  <br>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <h3>Undecided? Not sure what to pick? Let "Step Out!" surprise you. (It's kind of like the bossy best friend who
+        likes to plan your day for you, only with an Off switch.) </h3>
+    </div>
+  </div>
+
+  <div class="row justify-content-center" id="surprisePick">
+  </div>
+
+  <div class="row justify-content-center" id="eventful-items">
+  </div>
+
+  <hr>
+
+  <div class="row justify-content-center" id="weather-items">
+    <div class="col-9">
+    <h1 id="actualTempResult"></h1>
+    <h1 id="tempResult"></h1>
+    <h1 id="cityResult"></h1>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="footer">
+      <div class="col-12">
+        Background is courtesy of Matt Lipman at <a href="https://SVGBackgrounds.com" target="_blank">
+          SVGBackgrounds.com</a>.
+      </div>
+    </div>
+  </div>
   </div>
 
 
