@@ -35,10 +35,11 @@ $.ajax({
 
 //eventful API call
 $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&location="+
+    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&(q=arts||concerts||festivals)&location="+
      locationZIP +"&within=" 
      + withinDistance,
     method: "GET"
+
 }).then(function(eResponse){
 
     var eResults = JSON.parse(eResponse);
@@ -50,10 +51,31 @@ $.ajax({
         $("#eventful-items").append(newDiv);
         newDiv.append("<p class=event-name>Event: " + eResults.events.event[i].title + "</p>");
         newDiv.append("<p>Location: " + eResults.events.event[i].venue_name + " at " + eResults.events.event[i].venue_address);
-        newDiv.append("<p>Start Time: " + eResults.events.event[i].start_time + "</p>");
-        newDiv.append("<p>For more info: " + "<a href='" + eventURL + "' target='blan'>Event Website</a>" + "</p>");
+        newDiv.append("<p>Start date/time (if provided): " + eResults.events.event[i].start_time + "</p>");
+        newDiv.append("<p>For more info: " + "<a href='" + eventURL + "' target='blank'>Event Website</a>" + "</p>");
              console.log(eResults);
              console.log(eventURL)
     }
+
+    $("#surpriseButton").on("click", function() {
+        event.preventDefault();
+    
+        var randomItem = eResults.events.event[Math.floor(Math.random()*eResults.events.event.length)];
+        var surpriseURL = randomItem.url
+        console.log(surpriseURL)
+
+        var newSurpriseDiv = $("<div>")
+        $("#surprisePick").append(newSurpriseDiv);
+        newSurpriseDiv.addClass("surprise-event-container");
+        newSurpriseDiv.append("<p class=event-name>Event picked for you: " + randomItem.title + "</p>");
+        newSurpriseDiv.append("<p>Location: " + randomItem.venue_name + " at " + randomItem.venue_address);
+        newSurpriseDiv.append("<p>Start date/time (if provided): " + randomItem.start_time + "</p>");
+        newSurpriseDiv.append("<p>For more info: " + "<a href='" + surpriseURL  + "' target='blank'>Event Website</a>" + "</p>");
+        $("#eventful-items").empty();
+
 });
+
+
 });
+
+});   
