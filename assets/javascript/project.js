@@ -29,8 +29,8 @@ $.ajax({
 .then(function (WbResponse) {
     var WbResults = WbResponse.data[0];
 
-    $("#actualTempResult").text("Actual Temperature: " + WbResults.temp + String.fromCharCode(176));
-    $("#tempResult").text("How it Feels: " + WbResults.app_temp + String.fromCharCode(176));
+    $("#actualTempResult").text("Temperature: " + WbResults.temp + String.fromCharCode(176));
+    // $("#tempResult").text("How it Feels: " + WbResults.app_temp + String.fromCharCode(176));
     $("#cityResult").text("in " + WbResults.city_name);
     console.log(WbResults);
 
@@ -38,7 +38,7 @@ $.ajax({
 
 //eventful API call
 $.ajax({
-    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&(q=arts||concerts||festivals)&location="+
+    url: "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=gS6C4DppGrbXnzJ8&date=today&total_items=10&location="+
      locationZIP +"&within=" 
      + withinDistance,
     method: "GET"

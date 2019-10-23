@@ -47,106 +47,107 @@
     <hr>
 
     <form>
-      <div class="row justify-content-center"">
-        <div class=" col-4">
-        <div class="form-group">
-          <label for="postalCode">ZIP or Postal Code</label>
-          <input type="text" class="form-control" id="postalCode" placeholder="Type here">
-        </div>
-        <div class="form-row align-items-center">
-          <div class="col-auto my-1">
-            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Miles away</label>
-            <select class="custom-select mr-sm-2" id="milesSelect">
-              <option selected>Within</option>
-              <option value="5">5 miles</option>
-              <option value="15">15 miles</option>
-              <option value="25">25 miles</option>
-              <option value="50">50 miles</option>
-            </select>
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <div class="form-group">
+            <label for="postalCode">ZIP or Postal Code</label>
+            <input type="text" class="form-control" id="postalCode" placeholder="Type here">
           </div>
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Miles away</label>
+              <select class="custom-select mr-sm-2" id="milesSelect">
+                <option selected>Within</option>
+                <option value="5">5 miles</option>
+                <option value="15">15 miles</option>
+                <option value="25">25 miles</option>
+                <option value="50">50 miles</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <input class="btn btn-warning btn-lg" type="submit" value="Submit" id="submit">
+          </div>
+          <!-- CSS loader -->
+          <div class="lds-ripple">
+            <div>
+            </div>
+            <div>
+            </div>
+          </div>
+
         </div>
+        <div class="col-3" >
+          <div id="weather-items">
+          <h1 id="actualTempResult"></h1>
+          <h1 id="cityResult"></h1>
+        </div>
+        </div>
+      </div>
+    </form>
+
+    <br>
+    <hr>
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <h3>Still undecided? Not sure which of these to pick? Let "Step Out!" choose for you. (It's kind of like the
+          bossy
+          best friend who likes to plan your day for you, only with an Off switch.) </h3>
         <div>
-          <input class="btn btn-warning btn-lg" type="submit" value="Submit" id="submit">
+          <input class="btn btn-warning btn-lg" type="submit" value="Surprise Me!" id="surpriseButton">
         </div>
-        <!-- CSS loader -->
-        <div class="lds-ripple">
-          <div>
-          </div>
-          <div>
-          </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center" id="surprisePick">
+
+    </div>
+
+    <div class="row justify-content-center" id="eventful-items">
+    </div>
+
+    <hr>
+
+    <!-- Carousel at the Bottom of page -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/carousel_images/Farmers_Market.jpg" class="d-block w-100" alt="First slide">
         </div>
-        
-      </div>
-  </div>
-  </form>
-  <br>
-  <hr>
-  <div class="row justify-content-center">
-    <div class="col-9">
-      <h3>Still undecided? Not sure which of these to pick? Let "Step Out!" choose for you. (It's kind of like the bossy
-        best friend who likes to plan your day for you, only with an Off switch.) </h3>
-      <div>
-        <input class="btn btn-warning btn-lg" type="submit" value="Surprise Me!" id="surpriseButton">
-      </div>
-    </div>
-  </div>
-
-  <div class="row justify-content-center" id="surprisePick">
-
-  </div>
-
-  <div class="row justify-content-center" id="eventful-items">
-  </div>
-
-  <hr>
-
-  <div class="row justify-content-center" id="weather-items">
-    <div class="col-9">
-      <h1 id="actualTempResult"></h1>
-      <h1 id="tempResult"></h1>
-      <h1 id="cityResult"></h1>
-    </div>
-  </div>
-
-  <!-- Carousel at the Bottom of page -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./assets/images/carousel_images/Farmers_Market.jpg" class="d-block w-100" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/Horseback_Riding_on_Wooded_Trail.jpg" class="d-block w-100"
-          alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/Macy_thanksgiving-parade.jpg" class="d-block w-100" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/mixed-family-having-fun-outside.jpg" class="d-block w-100"
-          alt="Fourth slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/NightTimeLitPark.jpg" class="d-block w-100" alt="Fifth slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/Outdoor_Concert.jpg" class="d-block w-100" alt="Sixth slide">
-      </div>
-      <div class="carousel-item">
-        <img src="./assets/images/carousel_images/shutterstock_707775625-6cd10b6d.jpeg" class="d-block w-100"
-          alt="Seventh slide">
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/Horseback_Riding_on_Wooded_Trail.jpg" class="d-block w-100"
+            alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/Macy_thanksgiving-parade.jpg" class="d-block w-100"
+            alt="Third slide">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/mixed-family-having-fun-outside.jpg" class="d-block w-100"
+            alt="Fourth slide">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/NightTimeLitPark.jpg" class="d-block w-100" alt="Fifth slide">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/Outdoor_Concert.jpg" class="d-block w-100" alt="Sixth slide">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/carousel_images/shutterstock_707775625-6cd10b6d.jpeg" class="d-block w-100"
+            alt="Seventh slide">
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Footer with background courtesy line -->
-  <div class="row">
-    <div class="footer">
-      <div class="col-12">
-        Background is courtesy of Matt Lipman at <a href="https://SVGBackgrounds.com" target="_blank">
-          SVGBackgrounds.com</a>.
+    <!-- Footer with background courtesy line -->
+    <div class="row">
+      <div class="footer">
+        <div class="col-12">
+          Background is courtesy of Matt Lipman at <a href="https://SVGBackgrounds.com" target="_blank">
+            SVGBackgrounds.com</a>.
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
 
