@@ -8,11 +8,14 @@
 
 var locationZIP = "";
 var withinDistance = "";
+$(".lds-ripple").hide();
+
 
 $("#submit").on("click", function(){
     event.preventDefault();
     locationZIP = $("#postalCode").val().trim();
     withinDistance = $("#milesSelect").val();
+    $(".lds-ripple").show();
     console.log(locationZIP);
     console.log(withinDistance);
 
@@ -53,7 +56,8 @@ $.ajax({
         newDiv.append("<p>Location: " + eResults.events.event[i].venue_name + " at " + eResults.events.event[i].venue_address);
         newDiv.append("<p>Start date/time (if provided): " + eResults.events.event[i].start_time + "</p>");
         newDiv.append("<p>For more info: " + "<a href='" + eventURL + "' target='blank'>Event Website</a>" + "</p>");
-             console.log(eResults);
+        $(".lds-ripple").hide(); 
+        console.log(eResults);
              console.log(eventURL)
     }
 
