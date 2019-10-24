@@ -18,7 +18,7 @@ created by Code Force (Group members: Martin EyongNguta, Broc Davis, and Jennife
 
 WHY THE PROJECT IS USEFUL
 
-  The game fulfills a homework assignment for University of Kansas Coding Boot Camp, August 2019 to February 2020. Besides continuing to work with Bootstrap, jQuery, and JavaScript and writing items dynamically to the DOM, the assignment also taught us to work with two new APIs. We also utilized Pure CSS Loader, SVG Backgrounds, Favicon & App Icon Generator, and HTML Color Codes in the creation of the project.
+  The app fulfills a homework assignment for University of Kansas Coding Boot Camp, August 2019 to February 2020. Besides continuing to work with Bootstrap, jQuery, and JavaScript and writing items dynamically to the DOM, the assignment also taught us to work with two new APIs. We also utilized Pure CSS Loader, SVG Backgrounds, Favicon & App Icon Generator, and HTML Color Codes in the creation of the project.
 
 
 HOW YOU CAN GET STARTED WITH THE PROJECT
