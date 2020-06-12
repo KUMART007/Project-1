@@ -1,4 +1,4 @@
-# Project 1 
+STEP OUT
 Step Out! app
 
 https://brocdavis.github.io/Project-1/
